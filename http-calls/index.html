@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Hello HTTP</h1>
+  <div id="poke-list"></div>
+  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M256 32c-88.004 0-160 70.557-160 156.801C96 306.4 256 480 256 480s160-173.6 160-291.199C416 102.557 344.004 32 256 32zm0 212.801c-31.996 0-57.144-24.645-57.144-56 0-31.357 25.147-56 57.144-56s57.144 24.643 57.144 56c0 31.355-25.148 56-57.144 56z">
+    </path>
+  </svg>
+  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em"
+    xmlns="http://www.w3.org/2000/svg">
+    <g>
+      <path fill="none" d="M0 0h24v24H0z"></path>
+      <path
+        d="M22 21H2v-2h1V4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v5h2v10h1v2zm-5-2h2v-8h-6v8h2v-6h2v6zm0-10V5H5v14h6V9h6zM7 11h2v2H7v-2zm0 4h2v2H7v-2zm0-8h2v2H7V7z">
+      </path>
+    </g>
+  </svg>
+  <script>
+    fetch("https://pokeapi.co/api/v2/pokemon")
+      .then((res) => res.json())
+      .then((responseJSON) => {
+        for (poke of responseJSON.results) {
+          const pokeDiv = document.createElement('div');
+          pokeDiv.innerHTML = `<a href="${poke.url}">${poke.name}</a>`;
+          document.getElementById('poke-list').appendChild(pokeDiv);
+        }
+      })
+      .catch((error) => console.error(error))
+      .finally(() => hideSpinner());
+  </script>
+</body>
+
+</html>
