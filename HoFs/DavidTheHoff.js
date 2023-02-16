@@ -20,5 +20,3 @@ const innerHTML = "<ul>" + arr.map((x) => `<li>${x}</li>`).join("\n") + "</ul>";
 
 const myDiv = document.getElementById("my-div");
 myDiv.innerHTML = innerHTML;
-
-const x = 2;
