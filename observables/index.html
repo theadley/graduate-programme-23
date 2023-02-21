@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Vite App</title>
+</head>
+
+<body>
+  <!-- <div id="app"></div> -->
+  <div id="map" style="height: 70vh; width: 100vw; z-index: 999;"></div>
+  <div id="iss-info" style="height: 30vh; width: 100vw; z-index: 999;"></div>
+  <!-- <script type="module" src="/main.js"></script> -->
+  <script type="module" src="/obs.js"></script>
+  <script type="module" src="/map.js"></script>
+  <script type="module" src="/issInfo.js"></script>
+</body>
+
+</html>
