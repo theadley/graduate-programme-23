@@ -1,6 +1,7 @@
 import "./App.css";
 import Avatar from "./components/Avatar";
 import { ColumnContainer } from "./components/ColumnContainer";
+import Conditional from "./components/Conditional";
 import DomRef from "./components/DomRef";
 import EffectsMightSuck from "./components/EffectsMightSuck";
 import FetchData from "./components/FetchData";
@@ -62,6 +63,7 @@ function App() {
       <DomRef />
       <FetchData />
       <EffectsMightSuck />
+      <Conditional />
     </>
   );
 }

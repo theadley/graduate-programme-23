@@ -2,11 +2,13 @@ interface IButtonProps {
   color?: "dark" | "light";
   children?: React.ReactNode;
   className?: string;
+  onClick?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
 }
 export const MyCoolButton = ({
   color = "light",
   children,
   className = "",
+  onClick = () => console.log("OW"),
 }: IButtonProps) => {
   const appliedClasses = [color === "dark" ? "dark-btn" : "light-btn"];
   if (className.length) {
@@ -14,7 +16,9 @@ export const MyCoolButton = ({
   }
   appliedClasses.push(stylesTW.button);
   return (
-    <button className={appliedClasses.join(" ")}>
+    <button
+      className={appliedClasses.join(" ")}
+      onClick={onClick}>
       {children ?? "Click Me"}
     </button>
   );
