@@ -2,6 +2,8 @@ import "./App.css";
 import Avatar from "./components/Avatar";
 import { ColumnContainer } from "./components/ColumnContainer";
 import DomRef from "./components/DomRef";
+import EffectsMightSuck from "./components/EffectsMightSuck";
+import FetchData from "./components/FetchData";
 import { MyCoolButton } from "./components/MyCoolButton";
 import VarsStatesRefs from "./components/VarsStatesRefs";
 
@@ -58,6 +60,8 @@ function App() {
 
       <VarsStatesRefs />
       <DomRef />
+      <FetchData />
+      <EffectsMightSuck />
     </>
   );
 }
