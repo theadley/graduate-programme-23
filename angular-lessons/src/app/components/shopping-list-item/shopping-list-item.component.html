@@ -1,0 +1,8 @@
+<div *ngIf="item" [style.animation-delay]="0.2 * (index ?? 0) + 's'">
+  <input
+    type="checkbox"
+    [id]="'list-item-'+item.id"
+    [name]="'list-item-'+item.id"
+    [(ngModel)]="item.done">
+  <label [for]="'list-item-'+item.id"> {{item.name}}</label>
+</div>

@@ -1,0 +1,21 @@
+<div *ngIf="!isLoading; else loading">
+  <p>test-component works!</p>
+  <div>{{BMIValue}}</div>
+
+  <h2>Person:</h2>
+  <p>Name: {{person?.name}} {{person?.surname}}</p>
+  <p>Age: {{person?.age}}</p>
+
+  <button (click)="hideMe()">Hide myself</button>
+  <button (click)="increaseAge()">Get Older!</button>
+  <button (click)="decreaseAge()">Get Younger!</button>
+  <button (click)="changeColorToRed()">Red!</button>
+
+
+  <p>{{actuallyTheSameServiceLOL.color}}</p>
+</div>
+
+<ng-template #loading>
+  <p>Loading... please wait</p>
+</ng-template>
+

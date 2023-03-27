@@ -1,0 +1,38 @@
+.circuit {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  border-radius: 16px;
+  padding: 1rem;
+  background-color: #333;
+  color: whitesmoke;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0);
+
+  &:hover {
+    scale: 1.05;
+    box-shadow: 0 3px 6px 0 rgba(255, 0, 255, 0.5);
+  }
+}
+
+.heading {
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  img {
+    height: 1.3rem;
+  }
+}
+
+.sub-heading {
+  opacity: .9;
+}
+
+.date {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}

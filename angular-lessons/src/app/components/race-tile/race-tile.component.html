@@ -1,0 +1,14 @@
+<div class="circuit" *ngIf="f1Race" (click)="onClick($event)">
+  <div class="heading">
+    <img
+      *ngIf="countryCode?.length"
+      [src]="'https://flagsapi.com/' + countryCode + '/flat/64.png'">
+    {{f1Race.Circuit.Location.country | uppercase}}
+  </div>
+  <div class="sub-heading">
+    {{'Formula 1 ' + f1Race.Circuit.circuitName | uppercase}}
+  </div>
+  <div class="date">
+    {{f1Race.date | date : 'dd/MM/yyyy, h:mm a' | lowercase}}
+  </div>
+</div>

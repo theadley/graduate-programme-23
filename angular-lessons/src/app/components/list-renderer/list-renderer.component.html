@@ -1,0 +1,14 @@
+
+<!--Render all the items-->
+<ng-container *ngIf="renderThisList.length > 0">
+
+  <!-- ; let i=index; let odd=odd; trackBy: trackById -->
+
+  <app-shopping-list-item
+    *ngFor="let item of renderThisList; let i = index; trackBy: trackShoppingListItem"
+    class="visible"
+    [item]="item"
+    [index]="i" />
+
+</ng-container>
+

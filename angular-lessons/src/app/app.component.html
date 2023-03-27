@@ -1,0 +1,34 @@
+<h1>Hello Angular</h1>
+
+<p>{{sharedDataService.color}}</p>
+
+<button (click)="isTestAlive = !isTestAlive">Toggle Test</button>
+<button (click)="changeColorToBlue()">Blue!</button>
+
+<button (click)="isLoading = false">Done with loading</button>
+
+
+<app-test-component
+  [isLoading]="isLoading"
+  [person]="user"
+  [style]="'color: ' + sharedDataService.color"
+  [hidden]="!isTestAlive"
+  [class]="'m-4 p-8 rounded-xl ' + myClassList.join(' ')"
+  [class.loading]="isTestAlive"
+  [(alive)]="isTestAlive"
+  (killMe)="isTestAlive = false"
+  (alterAgeBy)="changeAgeBy($event)"/>
+
+<app-purple />
+
+<app-share-state-rxjs />
+
+<app-name-input [(cupcake)]="user.name" />
+
+<input type="text" [(ngModel)]="user.surname" />
+
+<app-list-renderer />
+
+<app-f1-season />
+
+<!--<router-outlet></router-outlet>-->

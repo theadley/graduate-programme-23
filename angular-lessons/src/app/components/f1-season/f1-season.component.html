@@ -1,0 +1,14 @@
+<ng-container *ngIf="!(currentF1Season$ | async)?.MRData?.RaceTable?.Races; else content">
+  <p>Probably still loading 🤷🏼‍</p>
+</ng-container>
+
+<ng-template #content>
+  <input type="text" placeholder="Filer races" (input)="handleFilterInputChanged($event)" />
+  <div class="container">
+    <app-race-tile
+      *ngFor="let f1Race of ((currentF1Season$ | async)?.MRData?.RaceTable?.Races ?? []) | filterRaces : (filterText$ | async) ?? ''; trackBy: trackRace"
+      [f1Race]="f1Race"
+      [countryCode]="getCountryCode(f1Race?.Circuit?.Location?.country)"
+    />
+  </div>
+</ng-template>
