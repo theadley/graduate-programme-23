@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-auth-be639": {
+      "hosting": {
+        "auth-test": [
+          "angular-auth-be639"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-auth-be639"
+  }
+}
