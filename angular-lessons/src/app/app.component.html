@@ -27,8 +27,11 @@
 
 <input type="text" [(ngModel)]="user.surname" />
 
-<app-list-renderer />
+<!--<app-list-renderer />-->
 
-<app-f1-season />
+<!--<app-f1-season />-->
 
-<!--<router-outlet></router-outlet>-->
+<a routerLink="/races-hr-compliant-kind" routerLinkActive="active">Show me the F1 races</a><br/>
+<a routerLink="/" routerLinkActive="active">Hide the F1 races</a>
+
+<router-outlet></router-outlet>

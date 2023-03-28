@@ -9,6 +9,8 @@
       *ngFor="let f1Race of ((currentF1Season$ | async)?.MRData?.RaceTable?.Races ?? []) | filterRaces : (filterText$ | async) ?? ''; trackBy: trackRace"
       [f1Race]="f1Race"
       [countryCode]="getCountryCode(f1Race?.Circuit?.Location?.country)"
+      (click)="routeToRace(f1Race)"
     />
   </div>
+  <router-outlet/>
 </ng-template>

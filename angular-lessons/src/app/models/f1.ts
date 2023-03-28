@@ -14,6 +14,7 @@ export interface MRData {
 
 export interface RaceTable {
   season: string
+  round?: string
   Races: Race[]
 }
 
@@ -25,11 +26,12 @@ export interface Race {
   Circuit: Circuit
   date: string
   time: string
-  FirstPractice: FirstPractice
-  SecondPractice: SecondPractice
+  FirstPractice?: FirstPractice
+  SecondPractice?: SecondPractice
   ThirdPractice?: ThirdPractice
-  Qualifying: Qualifying
+  Qualifying?: Qualifying
   Sprint?: Sprint
+  Results?: Result[]
 }
 
 export interface Circuit {
@@ -69,4 +71,53 @@ export interface Qualifying {
 export interface Sprint {
   date: string
   time: string
+}
+
+export interface Result {
+  number: string
+  position: string
+  positionText: string
+  points: string
+  Driver: Driver
+  Constructor: Constructor
+  grid: string
+  laps: string
+  status: string
+  Time?: Time
+  FastestLap?: FastestLap
+}
+
+export interface Driver {
+  driverId: string
+  permanentNumber?: string
+  code: string
+  url: string
+  givenName: string
+  familyName: string
+  dateOfBirth: string
+  nationality: string
+}
+
+export interface Constructor {
+  constructorId: string
+  url: string
+  name: string
+  nationality: string
+}
+
+export interface Time {
+  millis: string
+  time: string
+}
+
+export interface FastestLap {
+  rank: string
+  lap: string
+  Time: {time: string}
+  AverageSpeed: AverageSpeed
+}
+
+export interface AverageSpeed {
+  units: string
+  speed: string
 }

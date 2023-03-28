@@ -13,4 +13,11 @@ export class F1Service {
   getCurrentF1Season() {
     return this.httpClient.get<F1APIResponse>(`${this.BASE_API_URL}current.json`)
   }
+
+  getF1Season(year = 'current') {
+    return this.httpClient.get<F1APIResponse>(`${this.BASE_API_URL}${year}.json`)
+  }
+  getF1RaceResult(year = 'current', raceNumber = 1) {
+    return this.httpClient.get<F1APIResponse>(`${this.BASE_API_URL}${year}/${raceNumber}/results.json`)
+  }
 }

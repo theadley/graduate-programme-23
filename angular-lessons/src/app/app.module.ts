@@ -14,6 +14,8 @@ import {HttpClientModule} from "@angular/common/http";
 import { F1SeasonComponent } from './components/f1-season/f1-season.component';
 import { FilterRacesPipe } from './pipes/filter-races.pipe';
 import { RaceTileComponent } from './components/race-tile/race-tile.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { RaceWinnerComponent } from './components/race-winner/race-winner.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { RaceTileComponent } from './components/race-tile/race-tile.component';
     ShoppingListItemComponent,
     F1SeasonComponent,
     FilterRacesPipe,
-    RaceTileComponent
+    RaceTileComponent,
+    NotFoundComponent,
+    RaceWinnerComponent
   ],
   imports: [
     BrowserModule,

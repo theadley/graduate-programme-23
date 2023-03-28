@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {F1Service} from "../../services/f1.service";
 import {
   Observable,
-  BehaviorSubject,
+  BehaviorSubject, first, switchAll, switchMap,
 } from "rxjs";
 import {
   debounceTime,
@@ -10,6 +10,7 @@ import {
 } from "rxjs/operators";
 import {F1APIResponse, Race} from "../../models/f1";
 import {byCountry} from "country-code-lookup";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-f1-season',
@@ -20,15 +21,31 @@ export class F1SeasonComponent {
 
   filterText$: Observable<string>;
   inputText$ = new BehaviorSubject<string>('');
-  currentF1Season$: Observable<F1APIResponse>;
+  currentF1Season$: Observable<F1APIResponse>|undefined;
 
-  constructor(private f1APIService: F1Service) {
-    this.currentF1Season$ = this.f1APIService.getCurrentF1Season();
+  constructor(
+    private f1APIService: F1Service,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {
+    // this.currentF1Season$ = this.f1APIService.getCurrentF1Season();
 
     this.filterText$ = this.inputText$
       .pipe(
         debounceTime(500),
         distinctUntilChanged()
+      );
+
+    // this.route.queryParams.pipe(first()).subscribe(params => {
+    //   this.currentF1Season$ = this.f1APIService.getF1Season(params['year'] ?? 'current');
+    // })
+
+    this.currentF1Season$ = this.route.queryParams
+      .pipe(
+        first(),
+        switchMap(params =>
+          this.f1APIService.getF1Season(params['year'] ?? 'current')
+        )
       );
   }
 
@@ -50,5 +67,9 @@ export class F1SeasonComponent {
 
   handleFilterInputChanged(event: Event) {
     this.inputText$.next((event.target as HTMLInputElement).value);
+  }
+
+  routeToRace(f1Race: Race) {
+    this.router.navigate([f1Race.season, 'race', f1Race.round], {relativeTo: this.route});
   }
 }
