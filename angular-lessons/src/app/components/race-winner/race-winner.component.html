@@ -1,8 +1,13 @@
-<ng-template let-result="f1RaceResult$ | async">
+<!-- https://stackoverflow.com/a/51349145/4331033 -->
+<ng-container *ngTemplateOutlet="race; context: {raceData: f1RaceResult$ | async}"></ng-container>
 
-<div>
-hello
-</div>
-
+<ng-template #race let-raceResult="raceData">
+  <h1>Race Result {{raceResult | json}}</h1>
 </ng-template>
+
+<!--<div>-->
+<!--  {{(f1RaceResult$ | async)?.MRData.RaceTable}}-->
+<!--  -->
+<!--  {{(f1RaceResult$ | async)?.MRData?.RaceTable?.season}}-->
+<!--</div>-->
 

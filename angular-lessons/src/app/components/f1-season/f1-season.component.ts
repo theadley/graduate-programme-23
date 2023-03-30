@@ -40,11 +40,20 @@ export class F1SeasonComponent {
     //   this.currentF1Season$ = this.f1APIService.getF1Season(params['year'] ?? 'current');
     // })
 
-    this.currentF1Season$ = this.route.queryParams
+    // this.currentF1Season$ = this.route.queryParams
+    //   .pipe(
+    //     switchMap(params =>
+    //       this.f1APIService.getF1Season(params['year'] ?? 'current')
+    //     )
+    //   );
+
+    // route.firstChild?.paramMap
+    this.currentF1Season$ = route.paramMap
       .pipe(
-        first(),
         switchMap(params =>
-          this.f1APIService.getF1Season(params['year'] ?? 'current')
+          this.f1APIService.getF1Season(
+            params.get('year') ?? 'current',
+          )
         )
       );
   }
@@ -70,6 +79,6 @@ export class F1SeasonComponent {
   }
 
   routeToRace(f1Race: Race) {
-    this.router.navigate([f1Race.season, 'race', f1Race.round], {relativeTo: this.route});
+    this.router.navigate(['races-hr-compliant-kind', f1Race.season, 'race', f1Race.round]);
   }
 }
