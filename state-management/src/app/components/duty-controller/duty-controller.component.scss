@@ -1,0 +1,80 @@
+.duty-entry {
+  margin-bottom: 2px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+  &:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+
+  p {
+    margin: 0 16px;
+  }
+
+  .number-input {
+    width: 100%;
+    display: flex;
+
+    nz-input-group {
+      background-color: transparent;
+      margin: 2px 0;
+
+      input {
+        background-color: transparent;
+        border-color: rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, border 0.3s ease;
+
+        &:hover {
+          background-color: rgba(0, 149, 255, 0.05);
+          border-color: rgba(0, 149, 255, 0.7);
+        }
+
+        &:focus {
+          background-color: rgba(0, 149, 255, 0.05);
+          border-color: rgba(0, 149, 255, 1);
+        }
+      }
+    }
+
+    .save {
+      width: 37px;
+      height: 31px;
+      margin: 2px;
+      border-radius: 4px;
+      background-color: transparent;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, border 0.3s ease;
+      display: flex;
+      cursor: pointer;
+
+      i {
+        margin: auto;
+      }
+
+      &:hover {
+        background-color: rgba(0, 149, 255, 0.05);
+        border-color: rgba(0, 149, 255, 0.7);
+      }
+
+      &:focus {
+        background-color: rgba(0, 149, 255, 0.05);
+        border-color: rgba(0, 149, 255, 1);
+      }
+    }
+  }
+
+  nz-switch {
+    margin: 4px 16px;
+
+    // Warning - deprecated: https://angular.io/guide/component-styles#deprecated-deep--and-ng-deep
+    ::ng-deep .ant-switch-checked {
+      background-color: #1890ff;
+    }
+  }
+
+  .registration {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+}

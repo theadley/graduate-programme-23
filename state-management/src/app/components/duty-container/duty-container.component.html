@@ -1,0 +1,17 @@
+<div nz-row>
+  <div nz-col nzSpan="16" class="tab">
+    <nz-tabset>
+      <nz-tab nzTitle="Ops Members">
+        <div class="ops-member" [class.selected]="opsGuy.nationalCallSignId === selectedOpsMember?.nationalCallSignId" *ngFor="let opsGuy of opsMembers" (click)="selectOpsMember(opsGuy)">{{opsGuy.name}} ({{opsGuy.registration}})</div>
+      </nz-tab>
+      <nz-tab nzTitle="Duty Control">
+        <ng-template nz-tab>
+          <app-duty-controller [opsMembers]="opsMembers"></app-duty-controller>
+        </ng-template>
+      </nz-tab>
+    </nz-tabset>
+  </div>
+  <div nz-col nzSpan="8" style="border: 1px solid #d3d3d3; padding: 1rem;" *ngIf="selectedOpsMember">
+    <app-selected-ops [selectedOpsMember]="selectedOpsMember"></app-selected-ops>
+  </div>
+</div>

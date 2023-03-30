@@ -1,0 +1,42 @@
+<h1>{{_selectedOpsMember ? _selectedOpsMember.name : 'Select an ops member to start'}}</h1>
+<ng-container *ngIf="_selectedOpsMember">
+  <nz-divider nzText="National Call Sign"></nz-divider>
+  <p>nationalCallSignId: <strong>{{_selectedOpsMember.nationalCallSignId}}</strong></p>
+  <p>username: <strong>{{_selectedOpsMember.username}}</strong></p>
+  <p>nationalCode: <strong>{{_selectedOpsMember.nationalCode}}</strong></p>
+  <p>province: <strong>{{_selectedOpsMember.province}}</strong></p>
+  <p>name: <strong>{{_selectedOpsMember.name}}</strong></p>
+  <p>cell: <strong>{{_selectedOpsMember.cell}}</strong></p>
+  <p>registration: <strong>{{_selectedOpsMember.registration}}</strong></p>
+  <p>make: <strong>{{_selectedOpsMember.make}}</strong></p>
+  <p>model: <strong>{{_selectedOpsMember.model}}</strong></p>
+  <p>tems: <strong>{{_selectedOpsMember.tems}}</strong></p>
+  <p>deleted: <strong>{{_selectedOpsMember.deleted}}</strong></p>
+  <p>makeId: <strong>{{_selectedOpsMember.makeId}}</strong></p>
+  <p>modelId: <strong>{{_selectedOpsMember.modelId}}</strong></p>
+  <nz-divider nzText="Latest Duty Status"></nz-divider>
+  <ng-container *ngIf="attendanceWithContacts?.attendance">
+    <p>opsVehicleAttendanceId: <strong>{{attendanceWithContacts?.attendance?.opsVehicleAttendanceId}}</strong></p>
+    <p>dateTime: <strong>{{attendanceWithContacts?.attendance?.dateTime}}</strong></p>
+    <p>customerVehicleId: <strong>{{attendanceWithContacts?.attendance?.customerVehicleId}}</strong></p>
+    <p>vehicleRegistration: <strong>{{attendanceWithContacts?.attendance?.vehicleRegistration}}</strong></p>
+    <p>vehicleAlias: <strong>{{attendanceWithContacts?.attendance?.vehicleAlias}}</strong></p>
+    <p>dutyStatus: <strong>{{attendanceWithContacts?.attendance?.dutyStatus}}</strong></p>
+    <p>dutyUser: <strong>{{attendanceWithContacts?.attendance?.dutyUser}}</strong></p>
+    <p>dutyDateTime: <strong>{{attendanceWithContacts?.attendance?.dutyDateTime}}</strong></p>
+    <p>dutyUserId: <strong>{{attendanceWithContacts?.attendance?.dutyUserId}}</strong></p>
+    <p>obreferenceNumber: <strong>{{attendanceWithContacts?.attendance?.obreferenceNumber}}</strong></p>
+    <p>dutyStatusId: <strong>{{attendanceWithContacts?.attendance?.dutyStatusId}}</strong></p>
+  </ng-container>
+  <nz-divider nzText="Contact Details"></nz-divider>
+  <ng-container *ngIf="attendanceWithContacts?.contact">
+    <p>alternativeNumber: <strong>{{attendanceWithContacts?.contact?.alternativeNumber}}</strong></p>
+    <p>customerVehicleId: <strong>{{attendanceWithContacts?.contact?.customerVehicleId}}</strong></p>
+    <p>dateTime: <strong>{{attendanceWithContacts?.contact?.dateTime}}</strong></p>
+    <p>previousAlternativeNumber: <strong>{{attendanceWithContacts?.contact?.previousAlternativeNumber}}</strong></p>
+    <p>previousSMSNumber: <strong>{{attendanceWithContacts?.contact?.previousSMSNumber}}</strong></p>
+    <p>smsNumber: <strong>{{attendanceWithContacts?.contact?.smsNumber}}</strong></p>
+    <p>updateDateTime: <strong>{{attendanceWithContacts?.contact?.updateDateTime}}</strong></p>
+    <p>userName: <strong>{{attendanceWithContacts?.contact?.userName}}</strong></p>
+  </ng-container>
+</ng-container>

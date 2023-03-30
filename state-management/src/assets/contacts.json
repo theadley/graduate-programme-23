@@ -1,0 +1,172 @@
+[
+  {
+    "customerVehicleId": 1993094,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.923+02:00",
+    "previousSMSNumber": null,
+    "alternativeNumber": null,
+    "previousAlternativeNumber": null,
+    "updateDateTime": null,
+    "userName": null
+  },
+  {
+    "customerVehicleId": 4786309,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.797+02:00",
+    "previousSMSNumber": null,
+    "alternativeNumber": null,
+    "previousAlternativeNumber": null,
+    "updateDateTime": null,
+    "userName": null
+  },
+  {
+    "customerVehicleId": 391967,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.923+02:00",
+    "previousSMSNumber": "+27812349012",
+    "alternativeNumber": "+27812343456",
+    "previousAlternativeNumber": "",
+    "updateDateTime": "2021-03-03T13:54:01.597+02:00",
+    "userName": "timwashere"
+  },
+  {
+    "customerVehicleId": 391968,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.813+02:00",
+    "previousSMSNumber": "+27812349012",
+    "alternativeNumber": "+27812343456",
+    "previousAlternativeNumber": "",
+    "updateDateTime": "2022-03-16T11:50:13.89+02:00",
+    "userName": "timwashere"
+  },
+  {
+    "customerVehicleId": 397438,
+    "smsNumber": "+27812345678",
+    "dateTime": "2022-02-28T13:30:18.553+02:00",
+    "previousSMSNumber": "+27812349012",
+    "alternativeNumber": "+27812343456",
+    "previousAlternativeNumber": "+27812347890",
+    "updateDateTime": "2022-02-28T13:30:18.553+02:00",
+    "userName": "timwashere"
+  },
+  {
+    "customerVehicleId": 397442,
+    "smsNumber": "+27812345678",
+    "dateTime": "2022-03-16T11:51:38.06+02:00",
+    "previousSMSNumber": null,
+    "alternativeNumber": "+27812343456",
+    "previousAlternativeNumber": "",
+    "updateDateTime": "2022-03-16T11:54:44.253+02:00",
+    "userName": "timwashere"
+  },
+  {
+    "customerVehicleId": 401004,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.83+02:00",
+    "previousSMSNumber": "+27812349012",
+    "alternativeNumber": "+27812343456",
+    "previousAlternativeNumber": "",
+    "updateDateTime": "2021-03-04T10:18:53.397+02:00",
+    "userName": "timwashere"
+  },
+  {
+    "customerVehicleId": 456007,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.923+02:00",
+    "previousSMSNumber": "+27812349012",
+    "alternativeNumber": "+27812343456",
+    "previousAlternativeNumber": "+27812347890",
+    "updateDateTime": "2021-04-30T07:36:59.243+02:00",
+    "userName": "timwashere"
+  },
+  {
+    "customerVehicleId": 1842485,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.797+02:00",
+    "previousSMSNumber": null,
+    "alternativeNumber": null,
+    "previousAlternativeNumber": null,
+    "updateDateTime": null,
+    "userName": null
+  },
+  {
+    "customerVehicleId": 1843085,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.783+02:00",
+    "previousSMSNumber": "+27812349012",
+    "alternativeNumber": "+27812343456",
+    "previousAlternativeNumber": "",
+    "updateDateTime": "2021-04-26T07:35:14.81+02:00",
+    "userName": "timwashere"
+  },
+  {
+    "customerVehicleId": 1993012,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.83+02:00",
+    "previousSMSNumber": "+27812349012",
+    "alternativeNumber": "+27812343456",
+    "previousAlternativeNumber": null,
+    "updateDateTime": "2022-03-14T12:17:42.253+02:00",
+    "userName": "timwashere"
+  },
+  {
+    "customerVehicleId": 1993094,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.83+02:00",
+    "previousSMSNumber": "+27812349012",
+    "alternativeNumber": "+27812343456",
+    "previousAlternativeNumber": "",
+    "updateDateTime": "2021-04-26T07:29:24.58+02:00",
+    "userName": "timwashere"
+  },
+  {
+    "customerVehicleId": 2008763,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.813+02:00",
+    "previousSMSNumber": "+27812349012",
+    "alternativeNumber": "+27812343456",
+    "previousAlternativeNumber": "+27812347890",
+    "updateDateTime": "2022-02-28T08:41:13.573+02:00",
+    "userName": "timwashere"
+  },
+  {
+    "customerVehicleId": 2009400,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.877+02:00",
+    "previousSMSNumber": "+27812349012",
+    "alternativeNumber": "+27812343456",
+    "previousAlternativeNumber": "",
+    "updateDateTime": "2021-04-12T13:06:31.623+02:00",
+    "userName": "timwashere"
+  },
+  {
+    "customerVehicleId": 2067424,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.783+02:00",
+    "previousSMSNumber": null,
+    "alternativeNumber": null,
+    "previousAlternativeNumber": null,
+    "updateDateTime": null,
+    "userName": null
+  },
+  {
+    "customerVehicleId": 2109100,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.813+02:00",
+    "previousSMSNumber": "+27812349012",
+    "alternativeNumber": "+27812343456",
+    "previousAlternativeNumber": "",
+    "updateDateTime": "2021-04-30T07:41:13.45+02:00",
+    "userName": "timwashere"
+  },
+  {
+    "customerVehicleId": 2109812,
+    "smsNumber": "+27812345678",
+    "dateTime": "2019-08-28T08:13:31.783+02:00",
+    "previousSMSNumber": null,
+    "alternativeNumber": null,
+    "previousAlternativeNumber": null,
+    "updateDateTime": null,
+    "userName": null
+  }
+]

@@ -1,0 +1,57 @@
+<div
+  *ngFor="let opsAttendanceWithContact of attendancesWithContacts"
+  class="duty-entry"
+  nz-row
+  [style.border-left]="opsAttendanceWithContact?.attendance?.dutyStatusId === 0 ? '4px solid red' : opsAttendanceWithContact?.attendance?.dutyStatusId === 1 ? '4px solid green' : '4px solid grey'">
+  <div nz-col nzSpan="8">
+    <p class="registration">{{opsAttendanceWithContact?.attendance?.vehicleRegistration}}</p>
+    <p>{{opsAttendanceWithContact?.attendance?.vehicleAlias}}</p>
+  </div>
+  <div nz-col nzSpan="8">
+    <div class="number-input">
+      <nz-form-item>
+        <nz-form-control nzHasFeedback nzErrorTip="Invalid Phone Number">
+          <nz-input-group nzAddOnBeforeIcon="phone">
+            <input
+              type="text"
+              nz-input
+              placeholder="SMS Number"
+              [(ngModel)]="opsAttendanceWithContact.contact.smsNumber"
+              *ngIf="opsAttendanceWithContact?.contact"
+              [ngModelOptions]="{standalone: true}"
+              pattern="(\+)?\d{10,13}" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <div class="save" nz-tooltip nzTooltipTitle="Save SMS Number">
+        <i aria-hidden="true" nz-icon nzType="save"></i>
+      </div>
+    </div>
+    <div class="number-input">
+      <nz-form-item>
+        <nz-form-control nzHasFeedback nzErrorTip="Invalid Phone Number">
+          <nz-input-group nzAddOnBeforeIcon="phone">
+            <input
+              type="text"
+              nz-input
+              placeholder="Alternative Number"
+              [(ngModel)]="opsAttendanceWithContact.contact.alternativeNumber"
+              *ngIf="opsAttendanceWithContact?.contact"
+              [ngModelOptions]="{standalone: true}"
+              pattern="(\+)?\d{10,13}" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <div class="save" nz-tooltip nzTooltipTitle="Save Alternative Number">
+        <i aria-hidden="true" nz-icon nzType="save"></i>
+      </div>
+    </div>
+  </div>
+  <div nz-col nzSpan="8">
+    <p><i aria-hidden="true" nz-icon nzType="clock-circle" nzTheme="outline"></i>
+      {{opsAttendanceWithContact?.attendance?.dutyDateTime | date: 'dd/MM/yyyy HH:mm:ss': '+0000' }}</p>
+    <nz-switch [ngModel]="opsAttendanceWithContact.attendance && opsAttendanceWithContact.attendance.dutyStatusId === 1"
+               nzCheckedChildren="On" nzUnCheckedChildren="Off" (ngModelChange)="toggleDutyStatusSwitch($event)">
+    </nz-switch>
+  </div>
+</div>
