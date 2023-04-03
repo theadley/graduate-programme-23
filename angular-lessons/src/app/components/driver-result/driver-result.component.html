@@ -1,0 +1,8 @@
+<div class="container" *ngIf="driverResult">
+  <div class="driver" *ngIf="driverResult?.Driver">
+    <img [src]="driverResult.Driver.nationality | nationalityFlag" [alt]="driverResult.Driver.nationality">
+    {{driverResult.Driver.permanentNumber}}. {{driverResult.Driver.givenName}} {{driverResult.Driver.familyName}}
+  </div>
+  <div class="constructor">{{driverResult.Constructor.name}}</div>
+  <div class="lap">{{driverResult.FastestLap?.Time?.time}} (Avg: {{driverResult.FastestLap?.AverageSpeed?.speed | number : '1.0-0'}}{{driverResult.FastestLap?.AverageSpeed?.units}})</div>
+</div>

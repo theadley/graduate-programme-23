@@ -18,6 +18,8 @@ import { RaceWinnerComponent } from './components/race-winner/race-winner.compon
 import { AnimationComponent } from './components/animation/animation.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { DriverResultComponent } from './components/driver-result/driver-result.component';
+import { NationalityFlagPipe } from './pipes/nationality-flag.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     FilterRacesPipe,
     RaceTileComponent,
     RaceWinnerComponent,
-    AnimationComponent
+    AnimationComponent,
+    DriverResultComponent,
+    NationalityFlagPipe
   ],
   imports: [
     BrowserModule,
