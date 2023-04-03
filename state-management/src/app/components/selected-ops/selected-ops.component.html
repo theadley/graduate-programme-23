@@ -1,42 +1,42 @@
-<h1>{{_selectedOpsMember ? _selectedOpsMember.name : 'Select an ops member to start'}}</h1>
-<ng-container *ngIf="_selectedOpsMember">
+<h1>{{selectedCorrelatedOPSMember?.opsMember ? selectedCorrelatedOPSMember?.opsMember?.name : 'Select an ops member to start'}}</h1>
+<ng-container *ngIf="selectedCorrelatedOPSMember?.opsMember">
   <nz-divider nzText="National Call Sign"></nz-divider>
-  <p>nationalCallSignId: <strong>{{_selectedOpsMember.nationalCallSignId}}</strong></p>
-  <p>username: <strong>{{_selectedOpsMember.username}}</strong></p>
-  <p>nationalCode: <strong>{{_selectedOpsMember.nationalCode}}</strong></p>
-  <p>province: <strong>{{_selectedOpsMember.province}}</strong></p>
-  <p>name: <strong>{{_selectedOpsMember.name}}</strong></p>
-  <p>cell: <strong>{{_selectedOpsMember.cell}}</strong></p>
-  <p>registration: <strong>{{_selectedOpsMember.registration}}</strong></p>
-  <p>make: <strong>{{_selectedOpsMember.make}}</strong></p>
-  <p>model: <strong>{{_selectedOpsMember.model}}</strong></p>
-  <p>tems: <strong>{{_selectedOpsMember.tems}}</strong></p>
-  <p>deleted: <strong>{{_selectedOpsMember.deleted}}</strong></p>
-  <p>makeId: <strong>{{_selectedOpsMember.makeId}}</strong></p>
-  <p>modelId: <strong>{{_selectedOpsMember.modelId}}</strong></p>
+  <p>nationalCallSignId: <strong>{{selectedCorrelatedOPSMember?.opsMember?.nationalCallSignId}}</strong></p>
+  <p>username: <strong>{{selectedCorrelatedOPSMember?.opsMember?.username}}</strong></p>
+  <p>nationalCode: <strong>{{selectedCorrelatedOPSMember?.opsMember?.nationalCode}}</strong></p>
+  <p>province: <strong>{{selectedCorrelatedOPSMember?.opsMember?.province}}</strong></p>
+  <p>name: <strong>{{selectedCorrelatedOPSMember?.opsMember?.name}}</strong></p>
+  <p>cell: <strong>{{selectedCorrelatedOPSMember?.opsMember?.cell}}</strong></p>
+  <p>registration: <strong>{{selectedCorrelatedOPSMember?.opsMember?.registration}}</strong></p>
+  <p>make: <strong>{{selectedCorrelatedOPSMember?.opsMember?.make}}</strong></p>
+  <p>model: <strong>{{selectedCorrelatedOPSMember?.opsMember?.model}}</strong></p>
+  <p>tems: <strong>{{selectedCorrelatedOPSMember?.opsMember?.tems}}</strong></p>
+  <p>deleted: <strong>{{selectedCorrelatedOPSMember?.opsMember?.deleted}}</strong></p>
+  <p>makeId: <strong>{{selectedCorrelatedOPSMember?.opsMember?.makeId}}</strong></p>
+  <p>modelId: <strong>{{selectedCorrelatedOPSMember?.opsMember?.modelId}}</strong></p>
   <nz-divider nzText="Latest Duty Status"></nz-divider>
-  <ng-container *ngIf="attendanceWithContacts?.attendance">
-    <p>opsVehicleAttendanceId: <strong>{{attendanceWithContacts?.attendance?.opsVehicleAttendanceId}}</strong></p>
-    <p>dateTime: <strong>{{attendanceWithContacts?.attendance?.dateTime}}</strong></p>
-    <p>customerVehicleId: <strong>{{attendanceWithContacts?.attendance?.customerVehicleId}}</strong></p>
-    <p>vehicleRegistration: <strong>{{attendanceWithContacts?.attendance?.vehicleRegistration}}</strong></p>
-    <p>vehicleAlias: <strong>{{attendanceWithContacts?.attendance?.vehicleAlias}}</strong></p>
-    <p>dutyStatus: <strong>{{attendanceWithContacts?.attendance?.dutyStatus}}</strong></p>
-    <p>dutyUser: <strong>{{attendanceWithContacts?.attendance?.dutyUser}}</strong></p>
-    <p>dutyDateTime: <strong>{{attendanceWithContacts?.attendance?.dutyDateTime}}</strong></p>
-    <p>dutyUserId: <strong>{{attendanceWithContacts?.attendance?.dutyUserId}}</strong></p>
-    <p>obreferenceNumber: <strong>{{attendanceWithContacts?.attendance?.obreferenceNumber}}</strong></p>
-    <p>dutyStatusId: <strong>{{attendanceWithContacts?.attendance?.dutyStatusId}}</strong></p>
+  <ng-container *ngIf="selectedCorrelatedOPSMember?.attendance">
+    <p>opsVehicleAttendanceId: <strong>{{selectedCorrelatedOPSMember?.attendance?.opsVehicleAttendanceId}}</strong></p>
+    <p>dateTime: <strong>{{selectedCorrelatedOPSMember?.attendance?.dateTime}}</strong></p>
+    <p>customerVehicleId: <strong>{{selectedCorrelatedOPSMember?.attendance?.customerVehicleId}}</strong></p>
+    <p>vehicleRegistration: <strong>{{selectedCorrelatedOPSMember?.attendance?.vehicleRegistration}}</strong></p>
+    <p>vehicleAlias: <strong>{{selectedCorrelatedOPSMember?.attendance?.vehicleAlias}}</strong></p>
+    <p>dutyStatus: <strong>{{selectedCorrelatedOPSMember?.attendance?.dutyStatus}}</strong></p>
+    <p>dutyUser: <strong>{{selectedCorrelatedOPSMember?.attendance?.dutyUser}}</strong></p>
+    <p>dutyDateTime: <strong>{{selectedCorrelatedOPSMember?.attendance?.dutyDateTime}}</strong></p>
+    <p>dutyUserId: <strong>{{selectedCorrelatedOPSMember?.attendance?.dutyUserId}}</strong></p>
+    <p>obreferenceNumber: <strong>{{selectedCorrelatedOPSMember?.attendance?.obreferenceNumber}}</strong></p>
+    <p>dutyStatusId: <strong>{{selectedCorrelatedOPSMember?.attendance?.dutyStatusId}}</strong></p>
   </ng-container>
   <nz-divider nzText="Contact Details"></nz-divider>
-  <ng-container *ngIf="attendanceWithContacts?.contact">
-    <p>alternativeNumber: <strong>{{attendanceWithContacts?.contact?.alternativeNumber}}</strong></p>
-    <p>customerVehicleId: <strong>{{attendanceWithContacts?.contact?.customerVehicleId}}</strong></p>
-    <p>dateTime: <strong>{{attendanceWithContacts?.contact?.dateTime}}</strong></p>
-    <p>previousAlternativeNumber: <strong>{{attendanceWithContacts?.contact?.previousAlternativeNumber}}</strong></p>
-    <p>previousSMSNumber: <strong>{{attendanceWithContacts?.contact?.previousSMSNumber}}</strong></p>
-    <p>smsNumber: <strong>{{attendanceWithContacts?.contact?.smsNumber}}</strong></p>
-    <p>updateDateTime: <strong>{{attendanceWithContacts?.contact?.updateDateTime}}</strong></p>
-    <p>userName: <strong>{{attendanceWithContacts?.contact?.userName}}</strong></p>
+  <ng-container *ngIf="selectedCorrelatedOPSMember?.contact">
+    <p>alternativeNumber: <strong>{{selectedCorrelatedOPSMember?.contact?.alternativeNumber}}</strong></p>
+    <p>customerVehicleId: <strong>{{selectedCorrelatedOPSMember?.contact?.customerVehicleId}}</strong></p>
+    <p>dateTime: <strong>{{selectedCorrelatedOPSMember?.contact?.dateTime}}</strong></p>
+    <p>previousAlternativeNumber: <strong>{{selectedCorrelatedOPSMember?.contact?.previousAlternativeNumber}}</strong></p>
+    <p>previousSMSNumber: <strong>{{selectedCorrelatedOPSMember?.contact?.previousSMSNumber}}</strong></p>
+    <p>smsNumber: <strong>{{selectedCorrelatedOPSMember?.contact?.smsNumber}}</strong></p>
+    <p>updateDateTime: <strong>{{selectedCorrelatedOPSMember?.contact?.updateDateTime}}</strong></p>
+    <p>userName: <strong>{{selectedCorrelatedOPSMember?.contact?.userName}}</strong></p>
   </ng-container>
 </ng-container>

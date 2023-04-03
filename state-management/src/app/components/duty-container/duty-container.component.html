@@ -2,16 +2,22 @@
   <div nz-col nzSpan="16" class="tab">
     <nz-tabset>
       <nz-tab nzTitle="Ops Members">
-        <div class="ops-member" [class.selected]="opsGuy.nationalCallSignId === selectedOpsMember?.nationalCallSignId" *ngFor="let opsGuy of opsMembers" (click)="selectOpsMember(opsGuy)">{{opsGuy.name}} ({{opsGuy.registration}})</div>
+        <div
+          *ngFor="let correlatedOPSMember of correlatedOPSMembers$ | async"
+          class="ops-member"
+          [class.selected]="correlatedOPSMember.opsMember.nationalCallSignId === (selectedOpsMember$ | async)?.opsMember?.nationalCallSignId"
+          (click)="selectOpsMember(correlatedOPSMember.opsMember)">
+          {{correlatedOPSMember.opsMember.name}} ({{correlatedOPSMember.opsMember.registration}})
+        </div>
       </nz-tab>
       <nz-tab nzTitle="Duty Control">
         <ng-template nz-tab>
-          <app-duty-controller [opsMembers]="opsMembers"></app-duty-controller>
+          <app-duty-controller [correlatedOpsMembers]="(correlatedOPSMembers$ | async) ?? []"></app-duty-controller>
         </ng-template>
       </nz-tab>
     </nz-tabset>
   </div>
-  <div nz-col nzSpan="8" style="border: 1px solid #d3d3d3; padding: 1rem;" *ngIf="selectedOpsMember">
-    <app-selected-ops [selectedOpsMember]="selectedOpsMember"></app-selected-ops>
+  <div nz-col nzSpan="8" style="border: 1px solid #d3d3d3; padding: 1rem;" *ngIf="selectedOpsMember$ | async">
+    <app-selected-ops [selectedCorrelatedOPSMember]="(selectedOpsMember$ | async) ?? undefined"></app-selected-ops>
   </div>
 </div>
