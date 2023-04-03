@@ -1,0 +1,9 @@
+<nav>
+  <button type="button" (click)="setState('open')">Open</button>
+  <button type="button" (click)="setState('closed')">Closed</button>
+  <button type="button" (click)="setState('purple')">Purple</button>
+</nav>
+
+<div [@openClose]="state" class="open-close-container">
+  <p>The box is now in the following state: {{ state }}!</p>
+</div>

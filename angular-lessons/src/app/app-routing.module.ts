@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {F1SeasonComponent} from "./components/f1-season/f1-season.component";
 import {RaceWinnerComponent} from "./components/race-winner/race-winner.component";
 import {FanGuard} from "./guards/fan.guard";
+import {AnimationComponent} from "./components/animation/animation.component";
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'races-hr-compliant-kind/:year',
     component: F1SeasonComponent,
+  },
+  {
+    path: 'animation',
+    component: AnimationComponent,
   },
   {
     path: '',

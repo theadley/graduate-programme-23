@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, isDevMode} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -15,6 +15,9 @@ import { F1SeasonComponent } from './components/f1-season/f1-season.component';
 import { FilterRacesPipe } from './pipes/filter-races.pipe';
 import { RaceTileComponent } from './components/race-tile/race-tile.component';
 import { RaceWinnerComponent } from './components/race-winner/race-winner.component';
+import { AnimationComponent } from './components/animation/animation.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -28,13 +31,21 @@ import { RaceWinnerComponent } from './components/race-winner/race-winner.compon
     F1SeasonComponent,
     FilterRacesPipe,
     RaceTileComponent,
-    RaceWinnerComponent
+    RaceWinnerComponent,
+    AnimationComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [FilterRacesPipe],
   bootstrap: [AppComponent]
