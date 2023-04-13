@@ -4,6 +4,7 @@ import {catchError, map, switchMap} from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
 import * as OpsAttendanceActions from '../actions/ops-attendance.actions';
 import {DutyService} from "../../services/duty.service";
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 
 @Injectable()
@@ -56,6 +57,11 @@ export class OpsAttendanceEffects {
             ),
             catchError(err => {
               console.error(err);
+              this.notification.create(
+                "error",
+                'Woh wohh wohhhhh',
+                'Bad things have happened, this is fine 🪑🐶☕️🔥'
+              );
               return EMPTY;
             })
           )
@@ -63,5 +69,9 @@ export class OpsAttendanceEffects {
     )
   });
 
-  constructor(private actions$: Actions, private opsService: DutyService) {}
+  constructor(
+    private actions$: Actions,
+    private opsService: DutyService,
+    private notification: NzNotificationService
+  ) {}
 }

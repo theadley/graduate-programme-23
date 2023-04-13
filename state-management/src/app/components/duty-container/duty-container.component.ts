@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {CorrelatedOpsMember, NationalCallSign} from "../../models/duty";
-import {Store} from "@ngrx/store";
+import {select, Store} from "@ngrx/store";
 import {OpsState} from "../../store/reducers/ops-attendance.reducer";
 import {setSelectedOpsMember} from "../../store/actions/ops-attendance.actions";
 import {Observable} from "rxjs";
@@ -19,8 +19,8 @@ export class DutyContainerComponent {
   selectedOpsMember$: Observable<CorrelatedOpsMember | undefined>;
 
   constructor(private store: Store<OpsState>) {
-    this.correlatedOPSMembers$ = store.select(selectCorrelatedOpsMembers);
-    this.selectedOpsMember$ = store.select(selectSelectedCorrelatedOpsMember);
+    this.correlatedOPSMembers$ = store.pipe(select(selectCorrelatedOpsMembers));
+    this.selectedOpsMember$ = store.pipe(select(selectSelectedCorrelatedOpsMember));
   }
 
   selectOpsMember(opsMember: NationalCallSign) {
