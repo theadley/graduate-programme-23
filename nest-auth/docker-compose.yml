@@ -1,0 +1,29 @@
+services:
+  frontend:
+    image: nginx
+    ports:
+      - '443:443'
+      - '80:80'
+    networks:
+      - front-tier
+      - back-tier
+
+  backend:
+    image: nest-auth-node
+    ports:
+      - '3131:3000'
+    networks:
+      - back-tier
+
+  database:
+    image: postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+    networks:
+      - back-tier
+
+networks:
+  # The presence of these objects is sufficient to define them
+  front-tier: {}
+  back-tier: {}
